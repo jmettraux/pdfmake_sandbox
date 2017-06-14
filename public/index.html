@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>pdfmake sandbox</title>
+  <script src="scripts/pdfmake.min.js"></script>
+  <script src="scripts/vfs_fonts.js"></script>
+  <style>
+    #frame {
+      width: 800px;
+      height: 600px;
+    }
+    input[type="button"] {
+      width: 800px;
+      height: 63px;
+    }
+  </style>
+</head>
+<body>
+  <input type="button" onclick="generatePdf();" value="PDF" />
+  <!--
+  <br/>
+  <iframe id='frame'></iframe>
+  -->
+
+  <script>
+function generatePdf() {
+  var def = { content: 'This is an sample PDF printed with pdfMake' };
+  //pdfMake.createPdf(def).download();
+  pdfMake.createPdf(def).open();
+};
+  </script>
+</body>
+</html>
+
