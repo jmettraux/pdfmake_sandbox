@@ -18,7 +18,8 @@ var Blah = (function() {
 
       // [left, top, right, bottom] or [horizontal, vertical]
       // or just a number for equal margins
-      pageMargins: [ 10, 10, 10, 10 ],
+      //pageMargins: [ 10, 10, 10, 10 ],
+      pageMargins: [ 14, 35 ],
 
       styles: {},
       content: [],
@@ -28,12 +29,15 @@ var Blah = (function() {
 
     def.styles.italian = { italic: true, fontSize: 7 };
     def.styles.motto = { italic: true, fontSize: 7 };
+    def.styles.pagination = { fontSize: 7, marginLeft: 10 };
 
     // header and footer
 
-    def.footer =
-      //{ text: 'Glow The Value!', style: 'motto' },
-      function(p, tp) { return '' + p + '/' + tp; };
+    //def.header = 'nada';
+    //def.footer = [ { text: 'Glow the Value!' } ];
+    def.footer = function(p, tp) {
+      return { text: '' + p + '/' + tp, style: 'pagination' };
+    };
 
     // content
 
