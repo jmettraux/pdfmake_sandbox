@@ -24,7 +24,18 @@ var Blah = (function() {
       content: [],
     };
 
+    // styles
+
     def.styles.italian = { italic: true, fontSize: 7 };
+    def.styles.motto = { italic: true, fontSize: 7 };
+
+    // header and footer
+
+    def.footer =
+      //{ text: 'Glow The Value!', style: 'motto' },
+      function(p, tp) { return '' + p + '/' + tp; };
+
+    // content
 
     def.content.push('Hello world of pdfmake!');
     def.content.push({ text: 'an adventure', style: 'italian' });
@@ -43,7 +54,9 @@ var Blah = (function() {
     }
     def.content.push({ table: table });
 
-    pdfMake.createPdf(def).open();
+    var pdf = pdfMake.createPdf(def);
+    //pdf.open();
+    pdf.getDataUrl(function(u) { document.getElementById('frame').src = u; });
   };
 
   return this;
