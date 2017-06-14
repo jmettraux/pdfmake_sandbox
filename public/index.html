@@ -4,6 +4,7 @@
   <title>pdfmake sandbox</title>
   <script src="scripts/pdfmake.min.js"></script>
   <script src="scripts/vfs_fonts.js"></script>
+  <script src="scripts/blah.js"></script>
   <style>
     #frame {
       width: 800px;
@@ -16,19 +17,11 @@
   </style>
 </head>
 <body>
-  <input type="button" onclick="generatePdf();" value="PDF" />
+  <input type="button" onclick="Blah.generatePdf();" value="PDF" />
   <!--
   <br/>
   <iframe id='frame'></iframe>
   -->
-
-  <script>
-function generatePdf() {
-  var def = { content: 'This is an sample PDF printed with pdfMake' };
-  //pdfMake.createPdf(def).download();
-  pdfMake.createPdf(def).open();
-};
-  </script>
 </body>
 </html>
 
